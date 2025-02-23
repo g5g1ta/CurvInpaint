@@ -1,0 +1,11 @@
+django-cors-headers 
+djangorestframework 
+djangorestframework-simplejwt 
+mysqlclient 
+numpy 
+django 
+pillow 
+opencv
+cvzone
+python-dotenv
+requests
