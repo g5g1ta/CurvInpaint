@@ -91,7 +91,7 @@ DATABASES = {
         'NAME': 'CurvInPaint',
         'USER': 'root',
         'PASSWORD': 'password',
-        'HOST':'localhost',
+        'HOST':'db',
         'PORT':'3306',
     }
 }
