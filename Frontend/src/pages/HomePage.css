@@ -1,0 +1,139 @@
+/* HomePage.css */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.time-to-imagine,
+.world-of-abstraction {
+  font-family: 'Press Start 2P', Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+  margin-bottom: 1rem;
+  text-shadow: 4px 4px 0px #000, -2px -2px 0px #ff4500;
+}
+
+.time-to-imagine span,
+.world-of-abstraction span {
+  font-size: 1.5rem;
+  color: #fff;
+  display: block;
+  text-shadow: 2px 2px 0px #000;
+  margin-bottom: 0.5rem;
+}
+
+.time-to-imagine {
+  font-size: 4rem;
+  color: #ffa500;
+}
+
+.world-of-abstraction {
+  font-size: 3rem;
+  color: #ffa500;
+}
+
+.content button {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content button:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+  color: black;
+  transform: scale(1.1);
+}
+
+/* Form Containers */
+.form-container {
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 10;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.form-container h2 {
+  font-family: 'Press Start 2P', Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #ffa500;
+  text-shadow: 2px 2px 0px #000, -2px -2px 0px #ff4500;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+/* Form Fields */
+.form-container input {
+  width: 100%; /* Full width of the form */
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-container button {
+  width: 110%;
+  padding: 12px;
+  background-color: #090e09;
+  color: rgb(216, 188, 32);
+  border: none;
+  border-radius: 4px;
+  display: block;
+  margin: 0 auto; /* Centers the button */
+}
+
+.form-container button:hover {
+  background-color: #e7eee7;
+}

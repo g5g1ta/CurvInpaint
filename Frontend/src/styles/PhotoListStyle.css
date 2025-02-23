@@ -1,0 +1,6 @@
+.PhotoContainer {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    row-gap: 20px;
+    column-gap: 10px;
+  }
