@@ -1,23 +1,14 @@
 import React, { useEffect } from 'react'
 import './App.css'
 import { BrowserRouter, Routes, Route, Navigate, useNavigate, UNSAFE_FrameworkContext } from 'react-router-dom'
-import Login from "./pages/Login"
 import Register from './pages/Register'
-import Home from './pages/Home'
+import Home from './components/Home/Home'
 import NotFound from './pages/NotFound'
-import ProtectedRoute from './components/ProtectedRoutes'
-import LoginForm from './components/LoginForm'
-import RegisterForm from './components/RegisterForm'
-import TestForm from './components/TestForm'
-import api from './api'
-import { jwtDecode } from 'jwt-decode'
-import { ACCESS_TOKEN } from './constants'
-import Image from './pages/Image'
-import UploadImage from './pages/UploadImage'
-import PhotoList from './components/PhotoList'
-import DrawingBoard from './components/DrawingBoard'
+import ProtectedRoute from './components//Routes/ProtectedRoutes'
+import PhotoList from './components/PhotoList/PhotoList'
+import DrawingBoard from './components/DrawingBoard/DrawingBoard'
 import HomePage from './pages/HomePage'
-import ImageGenerator from './components/ImageGenerator'
+import ImageGenerator from './components/ImageGenerator/ImageGenerator'
 
 function Logout() {
   localStorage.clear()

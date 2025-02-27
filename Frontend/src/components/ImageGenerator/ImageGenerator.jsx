@@ -1,17 +1,17 @@
 import { useState } from "react";
-import api from "../api";
-import './ImageGenerator.css'; 
-import { ACCESS_TOKEN } from "../constants";
+import api from "../../api";
+import '../ImageGenerator/ImageGenerator.css'; 
+import { ACCESS_TOKEN } from "../../constants";
 import { jwtDecode } from "jwt-decode";
-import DrawingBoardV2 from "./DrawingBoardV2"; // Import the DrawingBoard
+import DrawingBoardV2 from "../DrawingBoardV2/DrawingBoardV2"; 
 
 function ImageGenerator() {
   const [prompt, setPrompt] = useState("");
   const [imageStyle, setImageStyle] = useState("realistic"); 
   const [imageShape, setImageShape] = useState("rectangular"); 
   const [generatedImage, setGeneratedImage] = useState(null);
-  const [maskBlob, setMaskBlob] = useState(null); // New state for the mask Blob
-  const [showDrawingBoard, setShowDrawingBoard] = useState(false); // State to control DrawingBoard visibility
+  const [maskBlob, setMaskBlob] = useState(null); 
+  const [showDrawingBoard, setShowDrawingBoard] = useState(false); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -88,6 +88,7 @@ function ImageGenerator() {
   };
 
   return (
+    <div className="container">
     <div className="image-generator-container">
       <h1>Image Generator</h1>
       <form onSubmit={handleSubmit} className="form-container">
@@ -200,6 +201,7 @@ function ImageGenerator() {
           <button onClick={downloadImage} className="save-button">Download Image</button>
         </div>
       )}
+    </div>
     </div>
   );
 }

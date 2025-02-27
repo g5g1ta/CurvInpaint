@@ -19,8 +19,8 @@ const DrawingBoardV2 = ({ onSave }) => {
     contextRef.current = context;
 
     context.fillStyle = "black";
-    context.fillRect(0, 0, canvas.width, canvas.height); // Fill the canvas with black as default
-  }, [brushSize, brushColor]); // Re-run this whenever brush size or color changes
+    context.fillRect(0, 0, canvas.width, canvas.height); 
+  }, [brushSize, brushColor]); 
 
   const getMousePosition = (e) => {
     const canvas = canvasRef.current;
@@ -36,7 +36,7 @@ const DrawingBoardV2 = ({ onSave }) => {
     contextRef.current.moveTo(x, y);
 
     if (currentTool === "fill") {
-      fillColor(x, y); // Call the fill tool
+      fillColor(x, y); 
     } else {
       setIsDrawing(true);
     }
@@ -59,7 +59,7 @@ const DrawingBoardV2 = ({ onSave }) => {
     setIsDrawing(false);
   };
 
-  // Fill function for the fill tool
+  
   const fillColor = (x, y) => {
     const canvas = canvasRef.current;
     const context = contextRef.current;
@@ -67,7 +67,7 @@ const DrawingBoardV2 = ({ onSave }) => {
     const targetColor = context.getImageData(x, y, 1, 1).data;
     const targetRGB = `rgb(${targetColor[0]},${targetColor[1]},${targetColor[2]})`;
 
-    // Stack-based flood fill algorithm
+    
     const stack = [[x, y]];
 
     while (stack.length) {
@@ -75,7 +75,6 @@ const DrawingBoardV2 = ({ onSave }) => {
       if (context.getImageData(cx, cy, 1, 1).data.toString() === targetColor.toString()) {
         context.fillStyle = brushColor;
         context.fillRect(cx, cy, 1, 1);
-        // Add surrounding pixels to stack
         stack.push([cx + 1, cy]);
         stack.push([cx - 1, cy]);
         stack.push([cx, cy + 1]);
@@ -87,20 +86,20 @@ const DrawingBoardV2 = ({ onSave }) => {
   const handleSaveDrawing = () => {
     const canvas = canvasRef.current;
     canvas.toBlob((blob) => {
-      onSave(blob);  // Send the Blob to the parent
+      onSave(blob);  
     }, "image/png");
   };
 
   return (
     <div>
-      {/* Tool Selection */}
+      
       <div>
         <button onClick={() => setCurrentTool("brush")}>Brush</button>
         <button onClick={() => setCurrentTool("fill")}>Fill</button>
         <button onClick={() => setCurrentTool("eraser")}>Eraser</button>
       </div>
 
-      {/* Brush Size and Color Selection */}
+     
       <div>
         <label>Brush Size: </label>
         <input 
@@ -118,7 +117,7 @@ const DrawingBoardV2 = ({ onSave }) => {
         />
       </div>
 
-      {/* Canvas Area */}
+      
       <canvas
         ref={canvasRef}
         onMouseDown={startDrawing}
@@ -128,7 +127,7 @@ const DrawingBoardV2 = ({ onSave }) => {
         style={{ border: '1px solid #fff' }}
       />
 
-      {/* Save Drawing Button */}
+      
       <div>
         <button onClick={handleSaveDrawing}>Save Custom Shape</button>
       </div>

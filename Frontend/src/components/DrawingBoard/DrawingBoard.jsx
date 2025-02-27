@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import "../components/Drawing.css";
-import api from '../api';
+import "../DrawingBoard/Drawing.css"
+import api from '../../api';
 
 const DrawingBoard = ({onSave}) => {
     const canvasRef = useRef(null);
@@ -28,9 +28,9 @@ const DrawingBoard = ({onSave}) => {
 
     const getMousePosition = (e) => {
         const canvas = canvasRef.current;
-        const rect = canvas.getBoundingClientRect(); // Get canvas position relative to page
-        const x = e.clientX - rect.left;  // Adjust to canvas position
-        const y = e.clientY - rect.top;   // Adjust to canvas position
+        const rect = canvas.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;   
         return { x, y };
     };
 
@@ -40,7 +40,7 @@ const DrawingBoard = ({onSave}) => {
         contextRef.current.moveTo(x, y);
         setIsDrawing(true);
     };
-
+    
     const draw = (e) => {
         if (!isDrawing) return;
 
@@ -48,7 +48,6 @@ const DrawingBoard = ({onSave}) => {
         contextRef.current.lineTo(x, y);
         contextRef.current.stroke();
     };
-
     const stopDrawing = () => {
         contextRef.current.closePath();
         setIsDrawing(false);

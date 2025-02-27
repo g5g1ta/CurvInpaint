@@ -1,8 +1,8 @@
 import { useState } from "react"
-import api from "../api"
+import api from "../../api"
 import { Navigate, useNavigate } from "react-router-dom"
-import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants"
-import './LoginForm.css';
+import { ACCESS_TOKEN, REFRESH_TOKEN } from "../../constants"
+import '../LoginForm/LoginForm.css'
 
 function LoginForm(){
     const [email, setEmail] = useState("")

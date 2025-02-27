@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import PhotoCard from "../pages/PhotoCard";
+import PhotoCard from "../../pages/PhotoCard";
 import { useSearchParams } from "react-router-dom";
-import api from "../api";
-import { ACCESS_TOKEN } from "../constants";
+import api from "../../api";
+import { ACCESS_TOKEN } from "../../constants";
 import { jwtDecode } from "jwt-decode";
-import "../styles/PhotoListStyle.css"
+import "../../styles/PhotoListStyle.css"
 
 function PhotoList(props){
     const [images, setImages] = useState([])
