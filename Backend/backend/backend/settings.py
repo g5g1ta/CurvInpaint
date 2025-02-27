@@ -90,7 +90,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'CurvInPaint',
         'USER': 'root',
-        'PASSWORD': 'password',
+        'PASSWORD': '751222751222',
         'HOST':'localhost',
         'PORT':'3306',
     }
