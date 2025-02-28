@@ -88,17 +88,10 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-<<<<<<< HEAD
         'NAME': f'{os.getenv("DB_NAME")}',
         'USER': f'{os.getenv("DB_USER")}',
         'PASSWORD': f'{os.getenv("DB_PASSWORD")}',
         'HOST':f'{os.getenv("DB_HOST")}',
-=======
-        'NAME': 'CurvInPaint',
-        'USER': 'root',
-        'PASSWORD': '751222751222',
-        'HOST':'localhost',
->>>>>>> 52b0499a546ff4470e359fcb4d32d179f8327948
         'PORT':'3306',
     }
 }
