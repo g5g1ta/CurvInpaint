@@ -14,10 +14,10 @@ from pathlib import Path
 from datetime import timedelta
 
 import os
-
+from dotenv import load_dotenv
 
 # Actual directory user files go to
-
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-&)rrgn(99rcbaalq@=x8!n5xzc*87m3oo_85kv#9==n4+9=0yv'
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -88,10 +88,10 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'CurvInPaint',
-        'USER': 'root',
-        'PASSWORD': 'password',
-        'HOST':'localhost',
+        'NAME': f'{os.getenv("DB_NAME")}',
+        'USER': f'{os.getenv("DB_USER")}',
+        'PASSWORD': f'{os.getenv("DB_PASSWORD")}',
+        'HOST':f'{os.getenv("DB_HOST")}',
         'PORT':'3306',
     }
 }
